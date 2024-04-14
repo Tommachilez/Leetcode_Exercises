@@ -1,0 +1,36 @@
+1. Two Sum
+input:
+    - An array of integers: nums 
+    - An integer: target.
+output:
+    - Indices of the two numbers such that they add up to target.
+    - Each input would have EXACTLY ONE SOLUTION.
+    - May not use the same element twice.
+
+SOLUTION_1: 
+Pseudo code:
+    for i from 0 to len(nums) - 1:
+        for j from i+1 len(nums) - 2:
+            if nums[i] + nums[j] == target
+                return [i,j]
+Ưu Điểm:    
+    - đơn giản dễ cài đặt
+Nhược điểm:
+    - độ phúc tạp về thời gian lớn(O(n^2))
+    - không phù hợp với các input có kích thước lớn
+-------------------------------------------------------
+SOLUTION_2:
+Pseudo code: 
+    num_dict: dictionary
+    for i from 0 to len(nums) - 1:
+        temp = (target - i)
+        if temp in num_dict:
+            return [num_dict[temp], i]
+        else:
+            add [nums[i] : i] into num_dict
+Ưu điểm:
+    - đơn giản dễ cài đặt
+    - tối ưu được thời gian
+Nhược điểm:
+    - tăng độ phức tạp về không gian bộ nhớ
+    
