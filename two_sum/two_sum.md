@@ -1,5 +1,12 @@
+### Input
+- An array of integers: nums
+- An integer: target
+### Output
+- Indices of the two numbers such that they add up to target
+- Each input would have exactly one solution, and may not use the same element twice
+- Return the answer in any order
 # **Approach 1**
-## Pseudo code ##
+## Pseudo code
 ```
 i <- 0
 while lenght of nums > 0:
@@ -12,7 +19,7 @@ while lenght of nums > 0:
     delete the first element of nums
     increase i by 1
 ```
-## Source code ##
+## Source code
 ```
 i = 0
 while len(nums) > 0:
@@ -25,8 +32,8 @@ while len(nums) > 0:
     del nums[0]
     i += 1
 ```
-# **Approach 2** #
-## Pseudo code ##
+# **Approach 2**
+## Pseudo code
 ```
 for i from 1 to length of nums - 1:
     part <- empty list
@@ -37,7 +44,7 @@ for i from 1 to length of nums - 1:
         result <- list of part[0] and i
         return result
 ```
-## Source code ##
+## Source code
 ```
 for i in range(1, len(nums)):
     part = [j for j in range(0, i) if nums[j] == target - nums[i]]
@@ -45,8 +52,8 @@ for i in range(1, len(nums)):
         result = [part[0], i]
         return result
 ```
-# **Approach 3** #
-## Pseudo code ##
+# **Approach 3**
+## Pseudo code 
 ```
 dic <- empty dictionary
 for i from 0 to length of nums - 1:
@@ -55,7 +62,7 @@ for i from 0 to length of nums - 1:
         return result
     save index of nums[i] to dic
 ```
-## Source code ##
+## Source code
 ```
 dic = {}
 for i in range(len(nums)):
