@@ -1,0 +1,55 @@
+9. Palindrome Number
+input: integer x
+output: return true if x is a palindrome
+        return false otherwise
+
+SOLUTION_1:
+Pseudo Code:
+    IF x<0 RETURN FALSE 
+    start = x
+    reverse = 0 
+    WHILE x>0:
+        digit = x % 10
+        reverse = reverse*10 + digit
+        x = x/10
+    RETURN reverse == start
+Ưu điểm: 
+    - đơn giản dễ hiểu
+Nhược điểm: 
+    - độ phức tạp về thời gian còn lớn nếu input quá lớn
+    - tương tự với độ phức tạp về không gian lưu trữ
+---------------------------------------------------------
+SOLUTION_2:
+Pseudo Code:
+    str_x = to_str(x)
+    reverse = REVERSE(str_x)
+    return reverse == str_x
+Ưu điểm:
+    - đơn giản
+Nhược điểm:
+    - mất tính toán học
+    - khó khăn nếu ngôn ngữ không hỗ trợ các thao tác với chuỗi như chuyển về chuỗi hay đảo ngược chuỗi
+----------------------------------------------------------------
+SOLUTION_3:
+Pseudo Code:
+        IF (x < 0): RETURN FALSE
+        len_x = 0
+        temp = x
+        WHILE temp > 0:
+            temp = temp / 10
+            len_x += 1
+        temp = x
+        WHILE len_x > 1:
+            left = temp / (10**(len_x-1))
+            right = temp % 10
+            IF right != left:
+                RETURN FALSE
+            temp = temp % (10**(len_x-1))
+            temp = int(temp / 10)
+            len_x -= 2
+        RETURN TRUE
+Ưu điểm:
+    - Dựa sát vào định nghĩa số đối xứng
+Nhược điểm:
+    - khó hiểu
+    - độ phức tạp về không gian và thời gian còn lớn
