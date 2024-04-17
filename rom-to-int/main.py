@@ -37,7 +37,6 @@ roman_dict = {
 }
 
 STRING = "MCMXCIV"
-RESULT = 0
 
 test = RomanToInt(STRING)
 result1 = test.solution_1()
