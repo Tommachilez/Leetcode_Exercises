@@ -1,0 +1,31 @@
+13. Roman to Integer
+input: a roman numeral: s
+
+output: convert s to an integer
+
+SOLUTION_1:
+Pseudo code:
+    def switchToInt(char):
+        case: ['I'] = 1
+        case: ['V'] = 5
+        case: ['X'] = 10
+        case: ['L'] = 50
+        case: ['C'] = 100
+        case: ['D'] = 500
+        case: ['M'] = 1000
+
+    value = 0
+    for i in range(len(s)):
+        if i == len(s) - 1:
+            value += switchToInt[s[i]]
+        elif switchToInt[s[i]] < switchToInt[s[i+1]]:
+            value -= switchToInt[s[i]]
+        else:
+            value += switchToInt[s[i]]
+    return value
+Ưu điểm:
+    - dựa vào công thức chuyển số la mã sang số nguyên
+    - thời gian thực thi khá nhanh
+Nhược điểm:
+    - tốn nhiều bộ nhớ
+PS: em không nghĩ ra được cách nào khác
